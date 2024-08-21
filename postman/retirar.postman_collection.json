@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "9a0020c1-85f1-4f20-805c-19d9eb1df25b",
+		"name": "retirar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5697057"
+	},
+	"item": [
+		{
+			"name": "crear un retiro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"retira\": {\r\n                    \"pk_publica\": \"830da5d3-ef90-463a-8de0-71959f11e9c3\",\r\n                    \"username\": \"agssaaustisn\",\r\n                    \"email\": \"agudssstdian@gmail.com\",\r\n                    \"Tipo\": \"Almacen\",\r\n                    \"Nombres\": \"pruessba\",\r\n                    \"Apellidos\": \"aa\",\r\n                    \"password\": \"**********************\",\r\n                    \"Contacto\": \"22555551\",\r\n                    \"Comentarios\": \"aaaaaaaaaaaaaaaaaaaaaaaaa\"\r\n                },\r\n  \"producto\":  {\r\n                    \"pk_publica\": \"11e5cdb6-32d2-4382-8b03-d217d006267e\",\r\n                    \"Id_Sku\": \"sdfsdf\",\r\n                    \"Titulo\": \"producto14\",\r\n                    \"Descripción\": \"algoosdfsfsdfsdo\",\r\n                    \"Disponibilidad\": true,\r\n                    \"Imagen_QR\": null,\r\n                    \"Precio\": 52.25,\r\n                    \"Moneda\": \"USD\",\r\n                    \"Marca\": \"lg\",\r\n                    \"Unidad_medida\": \"pieza\",\r\n                    \"Cantidad\": 50\r\n                },\r\n  \"cantidad\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/almacen/retiro",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"almacen",
+						"retiro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener retiros",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/almacen/retiro?pk=39f65cbc-4a4b-42f5-9c0c-4e10916a871b",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"almacen",
+						"retiro"
+					],
+					"query": [
+						{
+							"key": "pk",
+							"value": "39f65cbc-4a4b-42f5-9c0c-4e10916a871b"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

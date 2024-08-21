@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "f4bba4c3-80bd-4b1e-9bbd-64ef231fc560",
+		"name": "depositar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5697057"
+	},
+	"item": [
+		{
+			"name": "registrar entrada",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"deposita\": {\r\n                    \"pk_publica\": \"830da5d3-ef90-463a-8de0-71959f11e9c3\",\r\n                    \"username\": \"agssaaustisn\",\r\n                    \"email\": \"agudssstdian@gmail.com\",\r\n                    \"Tipo\": \"Almacen\",\r\n                    \"Nombres\": \"pruessba\",\r\n                    \"Apellidos\": \"aa\",\r\n                    \"password\": \"**********************\",\r\n                    \"Contacto\": \"22555551\",\r\n                    \"Comentarios\": \"aaaaaaaaaaaaaaaaaaaaaaaaa\"\r\n                },\r\n  \"producto\":  {\r\n                    \"pk_publica\": \"3851a137-6694-45fc-af94-72534f8e87d4\",\r\n                    \"Id_Sku\": \"sdfsdf\",\r\n                    \"Titulo\": \"producto14\",\r\n                    \"Descripción\": \"algoosdfsfsdfsdo\",\r\n                    \"Disponibilidad\": true,\r\n                    \"Imagen_QR\": null,\r\n                    \"Precio\": 52.25,\r\n                    \"Moneda\": \"USD\",\r\n                    \"Marca\": \"lg\",\r\n                    \"Unidad_medida\": \"pieza\"\r\n                    \r\n                },\r\n  \"cantidad\": 40\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/almacen/depositar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"almacen",
+						"depositar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener registros",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/almacen/depositar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"almacen",
+						"depositar"
+					],
+					"query": [
+						{
+							"key": "pk",
+							"value": "9736f57b-7577-49fa-9bf3-9e3fa7133ede",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

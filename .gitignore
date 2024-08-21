@@ -1,0 +1,4 @@
+*.pyc[co]
+*.pyc
+*.sqlite3
+metodos.txt

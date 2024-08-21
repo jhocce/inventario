@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "fc882e30-b38e-472c-8061-0150792dd986",
+		"name": "user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5697057"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"jhocce3022prueba@hotmail.com\",\r\n    \"password\":\"25733034\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/login/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"login",
+						""
+					]
+				},
+				"description": "### User Login\n\nThis endpoint allows users to log in by providing their email and password.\n\n#### Request Body\n\n- `email` (string, required): The email of the user.\n    \n- `password` (string, required): The password of the user.\n    \n\n#### Response\n\nThe response is in JSON format and follows the schema below:\n\n``` json\n{\n    \"type\": \"object\",\n    \"properties\": {\n        \"status\": {\n            \"type\": \"string\"\n        },\n        \"operacion\": {\n            \"type\": \"string\"\n        },\n        \"entidad\": {\n            \"type\": \"string\"\n        },\n        \"mensaje_user\": {\n            \"type\": \"array\",\n            \"items\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"mensaje\": {\n                        \"type\": \"string\"\n                    }\n                }\n            }\n        },\n        \"mensaje_server\": {\n            \"type\": \"array\",\n            \"items\": {\n                \"type\": \"string\"\n            }\n        },\n        \"json\": {\n            \"type\": \"array\",\n            \"items\": {\n                \"type\": \"object\",\n                \"properties\": {\n                    \"token\": {\n                        \"type\": \"string\"\n                    }\n                }\n            }\n        }\n    }\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "crear user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"agssaaustisn\",\r\n    \"Nombres\":\"pruessba\",\r\n    \"Apellidos\":\"aa\",\r\n    \"email\":\"agudssstdiadn@gmail.com\",\r\n    \"password\":25733034,\r\n    \"Tipo\": \"Almacen\",\r\n    \"Contacto\":\"22555551\",\r\n    \"Comentarios\":\"aaaaaaaaaaaaaaaaaaaaaaaaa\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/user/?pk=bb59cec5-f24b-4354-8d6d-700822a8ab75",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						""
+					],
+					"query": [
+						{
+							"key": "pk",
+							"value": "bb59cec5-f24b-4354-8d6d-700822a8ab75"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/user/?usuario=aa",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						""
+					],
+					"query": [
+						{
+							"key": "pk",
+							"value": "bb59cec5-f24b-4354-8d6d-700822a8ab75",
+							"disabled": true
+						},
+						{
+							"key": "usuario",
+							"value": "aa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"Nombres\": \"cambio\"\r\n   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/?pk=bb59cec5-f24b-4354-8d6d-700822a8ab75",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						""
+					],
+					"query": [
+						{
+							"key": "pk",
+							"value": "bb59cec5-f24b-4354-8d6d-700822a8ab75"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

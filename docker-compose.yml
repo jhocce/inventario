@@ -1,0 +1,30 @@
+services:
+  web:
+    build: .
+    # command: gunicorn --bind=0.0.0.0:9090 inventario.wsgi:application
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - static_data:/app/static
+    ports:
+      - "9090:8000"
+    restart: always
+    env_file:
+      - ./.env
+    depends_on:
+      - db_postgres
+    entrypoint: ./entry.sh
+  db_postgres:
+    image: postgres:13.0-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data:rw
+    environment:
+       POSTGRES_DB: postgre
+       POSTGRES_USER: postgre
+       POSTGRES_PASSWORD: postgre
+
+volumes:
+  static_data:
+  postgres_data:
+networks:
+    some_network:

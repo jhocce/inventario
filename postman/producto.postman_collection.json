@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "9569cd67-d4e8-492d-8996-7051cb06b3ec",
+		"name": "producto",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5697057"
+	},
+	"item": [
+		{
+			"name": "registrar prod",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id_Sku\": \"sdfsdf\",\r\n    \"Titulo\": \"producto14\",\r\n    \"Descripción\": \"algoosdfsfsdfsdo\",\r\n    \"Disponibilidad\": true,\r\n    \"Precio\": 52.25,\r\n    \"Moneda\": \"USD\",\r\n    \"Marca\": \"lg\",\r\n    \"Unidad_medida\": \"pieza\",\r\n    \"Cantidad\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/producto/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/producto/?pk=adb62562-df26-48ed-af95-1a9ac034dc05&count=2&page=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto",
+						""
+					],
+					"query": [
+						{
+							"key": "pk",
+							"value": "adb62562-df26-48ed-af95-1a9ac034dc05"
+						},
+						{
+							"key": "count",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar producto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Descripción\": \"algooo, actualizado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/producto/?pk=adb62562-df26-48ed-af95-1a9ac034dc05",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto",
+						""
+					],
+					"query": [
+						{
+							"key": "pk",
+							"value": "adb62562-df26-48ed-af95-1a9ac034dc05"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "del producto",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/producto/?pk=adb62562-df26-48ed-af95-1a9ac034dc05",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto",
+						""
+					],
+					"query": [
+						{
+							"key": "pk",
+							"value": "adb62562-df26-48ed-af95-1a9ac034dc05"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
